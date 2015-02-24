@@ -4,6 +4,6 @@ var Command = require("./base/command");
 
 module.exports = {
 	get: function() {
-		return new Command("get", "positions").execute();
+		return new Command("get", "glance").execute();
 	}
 };

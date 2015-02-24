@@ -1,11 +1,11 @@
 var React = require("react"),
 	
-	Positions = require("./pages/positions");
+	Glance = require("./pages/glance");
 
 var App = React.createClass({
 	render: function() {
 		return <div>
-			<Positions />
+			<Glance />
 		</div>;
 	}
 });

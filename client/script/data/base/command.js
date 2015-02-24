@@ -3,6 +3,8 @@ var qwest = require("qwest"),
 
 module.exports = function(method, collection) {
 	this.execute = function(data) {
-		return qwest[method](config.apiLocation + collection);
+		return qwest[method](config.apiLocation + collection).then(function(result) {
+			return JSON.parse(result);	
+		});
 	};
 };
