@@ -1,0 +1,9 @@
+{
+	"hostname": "login.questrade.com",
+	"path": "/oauth2/token?grant_type=refresh_token&refresh_token=%s",
+	"accountNumber": "26739463",
+	
+	"server": {
+		"port": 3000	
+	}
+}
