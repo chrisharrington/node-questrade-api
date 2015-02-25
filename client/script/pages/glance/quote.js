@@ -28,6 +28,8 @@ module.exports = React.createClass({
 					<Change value={data.change} />
 				</div>
 				<div className="clearfix"></div>
+								   
+				<Table data={data} />
 			</Tile>
 		</div>;
 	}
