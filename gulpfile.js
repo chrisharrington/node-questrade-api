@@ -3,8 +3,12 @@ var gulp = require("gulp"),
 
 require("require-dir")("./client/build");
 
-gulp.task("watch", ["scripts"], function() {
+gulp.task("watch", ["script-dev", "style-dev"], function() {
     watch("client/script/**/*.js", function() {
-        gulp.start("scripts");
+        gulp.start("script-dev");
     });
+	
+	watch(["client/style/**/*.less", "client/style/**/*.css"], ["style"], function() {
+		gulp.start("style-dev");
+	});
 });

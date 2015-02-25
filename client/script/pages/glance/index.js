@@ -29,9 +29,13 @@ module.exports = React.createClass({
 	
 	render: function() {
 		var quotes = this.state.quotes.map(function(quote) {
-			return <Quote data={quote} />;
+			return <div className="col-sm-6 col-md-6 col-lg-4">
+				<Quote data={quote} />
+			</div>;
 		}.bind(this));
 		
-		return <div>{quotes}</div>;
+		return <div className="container">
+			<div className="row">{quotes}</div>
+		</div>;
 	}
 });

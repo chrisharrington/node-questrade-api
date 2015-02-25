@@ -16,7 +16,9 @@ function getPositions(accountNumber) {
 				symbol: position.symbol,
 				quantity: position.closedQuantity === 0 ? position.openQuantity : position.closedQuantity,
 				pnl: position.closedPnl === 0 ? position.openPnl : position.closedPnl,
-				currentPrice: position.currentPrice
+				currentPrice: position.currentPrice,
+				currentMarketValue: position.currentMarketValue,
+				totalCost: position.totalCost
 			};
 		});
 	});
