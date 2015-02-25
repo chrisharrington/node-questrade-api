@@ -4,6 +4,7 @@ var React = require("react"),
 	Tile = require("components/tile"),
 	Money = require("components/money"),
 	Change = require("components/change"),
+	Table = require("./table"),
 	
 	style = require("style/constants");
 
@@ -21,14 +22,16 @@ module.exports = React.createClass({
 		var data = this.props.data;
 		return <div style={{ marginBottom: "12px" }}>
 			<Tile indicator={this.getColourFromChange(data.change)}>
-				<h2 style={{ marginBottom: style.spacing, float: "left" }}>{data.symbol}</h2>
-				<div style={{ marginBottom: style.spacing, float: "right" }}>
-					<Money value={data.currentPrice} />
-					<br />
-					<Change value={data.change} />
-				</div>
-				<div className="clearfix"></div>
-								   
+				<div className="row">
+					<div className="col-xs-12">
+						<h2 className="pull-left spacing-bottom-12">{data.symbol}</h2>
+						<div className="pull-right">
+							<Money value={data.currentPrice} />
+							<br />
+							<Change value={data.change} />   
+						</div>
+					</div>
+				</div>	   
 				<Table data={data} />
 			</Tile>
 		</div>;
