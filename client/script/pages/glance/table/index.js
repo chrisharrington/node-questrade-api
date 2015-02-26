@@ -7,8 +7,9 @@ module.exports = React.createClass({
 	render: function() {
 		var data = this.props.data;
 		return <div className="row">
-			<Row label="Market value" value={data.currentMarketValue} />
-			<Row label="Total cost" value={data.totalCost} />
+			<Row label="Market value" isMoney="true" value={data.currentMarketValue} />
+			<Row label="Total cost" isMoney="true" value={data.totalCost} />
+			<Row label="PNL" isMoney="true" value={data.pnl} />
 		</div>;
 	}
 });

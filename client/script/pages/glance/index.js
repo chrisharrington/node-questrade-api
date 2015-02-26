@@ -4,7 +4,8 @@ var React = require("react"),
 	
 	Glance = require("data/glance"),
 	
-	Quote = require("./quote");
+	Quote = require("./quote"),
+	Pnl = require("./pnl");
 
 module.exports = React.createClass({
 	getInitialState: function() {
@@ -35,6 +36,7 @@ module.exports = React.createClass({
 		}.bind(this));
 		
 		return <div className="container">
+			<Pnl quotes={this.state.quotes} />
 			<div className="row">{quotes}</div>
 		</div>;
 	}
