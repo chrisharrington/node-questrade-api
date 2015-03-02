@@ -6,7 +6,9 @@ var React = require("react"),
 	Glance = require("data/glance"),
 	
 	Quote = require("./quote"),
-	Footer = require("./footer");
+	Footer = require("./footer"),
+	
+	style = require("style");
 
 module.exports = React.createClass({
 	getInitialState: function() {
@@ -36,7 +38,7 @@ module.exports = React.createClass({
 			</div>;
 		}.bind(this));
 		
-		return <Page>
+		return <Page style={{ paddingBottom: style.constants.spacing + style.constants.headerHeight }}>
 			<div className="row">{quotes}</div>
 			<Footer quotes={this.state.quotes} />
 		</Page>;

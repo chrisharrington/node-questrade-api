@@ -10,9 +10,12 @@ module.exports = React.createClass({
 	},
 	
 	style: function() {
-		return {
+		var look = {
 			paddingTop: style.constants.headerHeight + style.constants.spacing
-		}
+		};
+		for (var name in this.props.style)
+			look[name] = this.props.style[name];
+		return look;
 	},
 	
 	render: function() {
