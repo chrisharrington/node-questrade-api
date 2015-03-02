@@ -10,6 +10,7 @@ module.exports = React.createClass({
 			position: "fixed",
 			top: 0,
 			left: 0,
+			zIndex: 2,
 			width: "100%",
 			background: "linear-gradient(to bottom, " + style.colours.solid.header.top + ", " + style.colours.solid.header.bottom + ")",
 			color: "#DDD",
