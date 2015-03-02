@@ -1,4 +1,5 @@
 module.exports = {
-	spacing: "12px",
-	borderRadius: "3px"
+	spacing: 12,
+	borderRadius: 3,
+	headerHeight: 46
 };

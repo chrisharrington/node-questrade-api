@@ -2,15 +2,15 @@
 
 var React = require("react"),
 	
-	colors = require("style/colors");
+	colours = require("style/colours");
 
 module.exports = React.createClass({
 	getColour: function(value) {
 		if (value > 0)
-			return colors.font.green;
-		if (value > 0)
-			return colors.font.red;
-		return colors.font.grey;
+			return colours.font.green;
+		if (value < 0)
+			return colours.font.red;
+		return colours.font.grey;
 	},
 	
 	render: function() {

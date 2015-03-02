@@ -1,11 +1,12 @@
 "use strict";
 
 var React = require("react"),
+	Page = require("../base"),
 	
 	Glance = require("data/glance"),
 	
 	Quote = require("./quote"),
-	Pnl = require("./pnl");
+	Footer = require("./footer");
 
 module.exports = React.createClass({
 	getInitialState: function() {
@@ -35,9 +36,9 @@ module.exports = React.createClass({
 			</div>;
 		}.bind(this));
 		
-		return <div className="container">
-			<Pnl quotes={this.state.quotes} />
+		return <Page>
 			<div className="row">{quotes}</div>
-		</div>;
+			<Footer quotes={this.state.quotes} />
+		</Page>;
 	}
 });

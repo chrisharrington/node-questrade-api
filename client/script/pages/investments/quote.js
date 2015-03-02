@@ -6,8 +6,7 @@ var React = require("react"),
 	Change = require("components/change"),
 	Table = require("./table"),
 	
-	style = require("style/constants"),
-	colors = require("style/colors");
+	style = require("style/constants");
 
 module.exports = React.createClass({
 	render: function() {

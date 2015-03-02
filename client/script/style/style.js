@@ -3,7 +3,12 @@ var mixins = {
 	boxSizing: ["boxSizing", "MozBoxSizing", "WebkitBoxSizing"]
 };
 
-module.exports = function(style) {
+module.exports = function(props) {
+	for (var name in prefixify(props))
+		this[name] = props[name];
+};
+
+function prefixify(style) {
 	for (var prop in style)
 		style = replace(style, prop);
 	return style;
