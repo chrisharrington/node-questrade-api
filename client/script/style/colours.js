@@ -16,6 +16,11 @@ module.exports = {
 			
 			activeTop: "#617CC7",
 			activeBottom: "#445A97"
+		},
+		
+		footer: {
+			top: "#444444",
+			bottom: "#222222"
 		}
 	}
 };

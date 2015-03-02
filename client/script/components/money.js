@@ -12,6 +12,6 @@ module.exports = React.createClass({
 	},
 	
 	render: function() {
-		return <span style={{ fontWeight: "bold" }}>{this.formatNumberToMoney()}</span>;
+		return <span>{this.formatNumberToMoney()}</span>;
 	}
 });

@@ -28,9 +28,6 @@ module.exports = React.createClass({
 			padding: "0 18px",
 			cursor: "pointer"
 		});
-		console.log(location);
-		console.log(window.location.hash);
-		console.log(location === window.location.hash);
 		if (location === window.location.hash) {
 			look.color = "white";
 			look.background = "linear-gradient(to bottom, " + style.colours.solid.header.activeTop + ", " + style.colours.solid.header.activeBottom + ")";
