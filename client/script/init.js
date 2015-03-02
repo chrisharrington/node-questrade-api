@@ -1,13 +1,20 @@
 var React = require("react"),
+	Router = require("react-router"),
+	Route = Router.Route,
+	DefaultRoute = Router.DefaultRoute,
 	
-	Glance = require("./pages/glance");
+	App = require("./pages/app"),
+	Banks = require("./pages/banks"),
+	Investments = require("./pages/investments");
 
-var App = React.createClass({
-	render: function() {
-		return <div>
-			<Glance />
-		</div>;
-	}
+var routes = (
+	<Route handler={App} path="/">
+		<DefaultRoute handler={Banks} />
+		<Route name="banks" path="banks" handler={Banks} />
+		<Route name="investments" path="investments" handler={Investments} />
+	</Route>
+);
+
+Router.run(routes, function(Handler) {
+	React.render(<Handler />, document.body);
 });
-
-React.render(<App />, document.body);

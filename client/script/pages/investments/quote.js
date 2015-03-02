@@ -6,28 +6,18 @@ var React = require("react"),
 	Change = require("components/change"),
 	Table = require("./table"),
 	
-	style = require("style/constants");
+	style = require("style/constants"),
+	colors = require("style/colors");
 
 module.exports = React.createClass({
-	getColourFromChange: function(change) {
-		if (change === 0)
-			return "grey";
-		if (change < 0)
-			return "#BF0000";
-		if (change > 0)
-			return "green";
-	},
-	
 	render: function() {
 		var data = this.props.data;
 		return <div style={{ marginBottom: "12px" }}>
-			<Tile indicator={this.getColourFromChange(data.change)}>
+			<Tile>
 				<div className="row">
 					<div className="col-xs-12">
 						<h2 className="pull-left spacing-bottom-12">{data.symbol}</h2>
 						<div className="pull-right">
-							<Money value={data.currentPrice} />
-							<br />
 							<Change value={data.change} />   
 						</div>
 					</div>

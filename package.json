@@ -32,6 +32,7 @@
     "moment": "^2.9.0",
     "qwest": "^1.5.5",
     "react": "^0.12.2",
+    "react-router": "^0.12.4",
     "reactify": "^1.0.0",
     "require-dir": "^0.1.0"
   },
