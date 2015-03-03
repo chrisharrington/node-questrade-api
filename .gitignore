@@ -27,3 +27,4 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 api/tokens.json
+.DS_Store

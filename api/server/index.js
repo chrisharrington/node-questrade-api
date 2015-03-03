@@ -2,7 +2,12 @@
 
 var express = require("express"),
 	app = express(),
-	config = require("../config");
+	config = require("../config"),
+	fs = require("fs"),
+	https = require("https");
+
+var privateKey = fs.readFileSync("private.key"),
+	certificate = fs.readFileSync("cert.crt");
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -14,6 +19,7 @@ app.use(function(req, res, next) {
 
 require("./routes")(app);
 
-app.listen(config.server.port, function() {
-	console.log("Questrade API server listening on port %s...", config.server.port);
-});
+https.createServer({
+	key: privateKey,
+	cert: certificate
+}, app).listen(config.server.port);
