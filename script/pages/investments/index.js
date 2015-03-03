@@ -3,7 +3,7 @@
 var React = require("react"),
 	Page = require("../base"),
 	
-	Glance = require("data/glance"),
+	BusinessInvestments = require("data/business-investments"),
 	
 	Quote = require("./quote"),
 	Footer = require("./footer"),
@@ -19,12 +19,12 @@ module.exports = React.createClass({
 	},
 	
 	componentWillMount: function() {
-		this.getGlance();	
+		this.getBusinessInvestments();	
 	},
 	
-	getGlance: function() {
+	getBusinessInvestments: function() {
 		this.setState({ loading: true });
-		Glance.get().then(function(quotes) {
+		BusinessInvestments.get().then(function(quotes) {
 			this.setState({ quotes: quotes });
 		}.bind(this)).complete(function() {
 			this.setState({ loading: false });	

@@ -1,14 +1,14 @@
 var gulp = require("gulp"),
 	watch = require("gulp-watch");
 
-require("require-dir")("./client/build");
+require("require-dir")("./gulp");
 
 gulp.task("watch", ["script-dev", "style-dev"], function() {
-    watch("client/script/**/*.js", function() {
+    watch("script/**/*.js", function() {
         gulp.start("script-dev");
     });
 	
-	watch(["client/style/**/*.less", "client/style/**/*.css"], ["style"], function() {
+	watch(["style/**/*.less", "style/**/*.css"], ["style"], function() {
 		gulp.start("style-dev");
 	});
 });

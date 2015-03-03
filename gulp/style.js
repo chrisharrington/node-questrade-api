@@ -13,7 +13,7 @@ gulp.task("style-prod", function() {
 });
 
 function style(isProd) {
-	var stream = gulp.src(["./client/style/**/*.css", "./client/style/**/*.less"]);
+	var stream = gulp.src(["./style/**/*.css", "./style/**/*.less"]);
 	
 	if (!isProd) {
 		stream = stream.pipe(sourcemaps.init())
@@ -28,5 +28,5 @@ function style(isProd) {
 	
 	return stream
 		.pipe(concat("bundle.css"))
-		.pipe(gulp.dest("./client/"));
+		.pipe(gulp.dest("./"));
 }

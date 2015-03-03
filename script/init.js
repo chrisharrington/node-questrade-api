@@ -9,7 +9,6 @@ var React = require("react"),
 
 var routes = (
 	<Route handler={App} path="/">
-		<DefaultRoute handler={Investments} />
 		<Route name="bank-accounts" path="bank-accounts" handler={BankAccounts} />
 		<Route name="investments" path="investments" handler={Investments} />
 	</Route>

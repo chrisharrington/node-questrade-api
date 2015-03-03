@@ -13,8 +13,8 @@ gulp.task("script-prod", function() {
 });
 
 function script(isProd) {
-	var stream = browserify({ debug: !isProd, insertGlobals: false, paths: ["./node_modules", "./client", "./client/script"] })
-		.add("./client/script/init.js")
+	var stream = browserify({ debug: !isProd, insertGlobals: false, paths: ["./node_modules", "./", "./script"] })
+		.add("./script/init.js")
 		.transform("reactify")
 		.bundle()
 		.pipe(source("bundle.js"))
@@ -23,5 +23,5 @@ function script(isProd) {
 	if (isProd)
 		stream = stream.pipe(uglify());
 	
-	return stream.pipe(gulp.dest("./client/"));
+	return stream.pipe(gulp.dest("./"));
 };
