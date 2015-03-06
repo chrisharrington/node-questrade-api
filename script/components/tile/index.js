@@ -18,7 +18,7 @@ module.exports = React.createClass({
 	},
 	
 	render: function() {
-		return <div>
+		return <div style={this.props.style}>
 			<div className="tile" style={this.style()}>
 				{this.props.children}
 			</div>

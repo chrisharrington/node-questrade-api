@@ -1,12 +1,16 @@
 "use strict";
 
 var React = require("react"),
-	
+	Auth = require("auth"),
+	Router = require("react-router"),
 	style = require("style");
 
 module.exports = React.createClass({
-	componentDidMount: function() {
-			
+	mixins: [Router.Navigation],
+	
+	componentWillMount: function() {
+		if (!Auth.isSignedIn())
+			this.transitionTo("sign-in");
 	},
 	
 	style: function() {

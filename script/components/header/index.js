@@ -2,6 +2,7 @@
 
 var React = require("react"),
 	Style = require("style/style"),
+	Auth = require("auth/mixin"),
 	style = require("style");
 
 module.exports = React.createClass({
@@ -24,11 +25,12 @@ module.exports = React.createClass({
 			float: "left",
 			height: style.constants.headerHeight,
 			lineHeight: style.constants.headerHeight + "px",
-			display: "inline-block",
+			display: this.props.signedIn ? "inline-block" : "none",
 			verticalAlign: "middle",
 			padding: "0 18px",
 			cursor: "pointer"
 		});
+		
 		if (location === window.location.hash) {
 			look.color = "white";
 			look.background = "linear-gradient(to bottom, " + style.colours.solid.header.activeTop + ", " + style.colours.solid.header.activeBottom + ")";
@@ -37,8 +39,10 @@ module.exports = React.createClass({
 	},
 	
 	navigate: function(hash) {
-		window.location.hash = hash;
-		this.forceUpdate();
+		if (this.props.signedIn) {
+			window.location.hash = hash;
+			this.forceUpdate();
+		}
 	},
 	
 	render: function() {

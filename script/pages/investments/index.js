@@ -2,6 +2,7 @@
 
 var React = require("react"),
 	Page = require("../base"),
+	Auth = require("auth/mixin"),
 	
 	BusinessInvestments = require("data/business-investments"),
 	
@@ -11,6 +12,8 @@ var React = require("react"),
 	style = require("style");
 
 module.exports = React.createClass({
+	mixins: [Auth],
+	
 	getInitialState: function() {
 		return {
 			loading: true,
@@ -18,8 +21,9 @@ module.exports = React.createClass({
 		};
 	},
 	
-	componentWillMount: function() {
-		this.getBusinessInvestments();	
+	componentDidMount: function() {
+		if (this.isSignedIn())
+			this.getBusinessInvestments();	
 	},
 	
 	getBusinessInvestments: function() {
